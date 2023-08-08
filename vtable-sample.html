@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@3.3.11/dist/vuetify-labs.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <div>{{message}}</div>
+        <v-btn>Test</v-btn>
+        <v-table>
+            <thead>
+                <tr>
+                    <th>Column 1</th>
+                    <th>Column 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Value 1.1</td>
+                    <td>Value 1.2</td>
+                </tr>
+                <tr>
+                    <td>Value 2.1</td>
+                    <td>Value 2.2</td>
+                </tr>
+            </tbody>
+        </v-table>
+    </div>
+
+    <script type="importmap">
+        { 
+            "imports" : {
+                "vue": "https://unpkg.com/vue@3.3.4/dist/vue.esm-browser.prod.js",
+                "vuetify": "https://unpkg.com/vuetify@3.3.9/dist/vuetify.esm.js"
+            }
+        }
+    </script>
+
+    <script type="module">
+        import { createApp } from 'vue'
+        import { createVuetify } from 'vuetify'
+
+        const vuetify = createVuetify({theme: { defaultTheme: 'light' }})
+
+        const app = createApp({
+
+            data() {
+                return {
+                    message: 'Hello Vue!'
+                }
+            }
+        })
+
+        app.use(vuetify)
+        app.mount('#app')
+    </script>
+</body>
+
+</html>
